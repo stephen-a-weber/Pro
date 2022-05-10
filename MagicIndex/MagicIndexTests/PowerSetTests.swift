@@ -55,4 +55,14 @@ class PowerSetTests: XCTestCase {
      
     
      */
+    
+    
+    
+    func testBinary(){
+        
+        let trial = [1,2,3,4,5]
+        let result = powerSet.powerSetBinary(trial)
+        print(result)
+        print(result.count)
+    }
 }
