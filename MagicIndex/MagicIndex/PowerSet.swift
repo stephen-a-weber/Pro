@@ -29,6 +29,36 @@ class PowerSet {
         return powerset
         
     }
+    func powerSetBinary(_ n : [Int])->[[Int]]{
+        let amount = n.count
+       
+        
+        var number = 1<<(amount) - 1
+   //     This is 2 to the power of n looking for binary representation
+        var result = [[Int]]()
+        while number>=0 {
+            
+           var subset = [Int]()
+            
+            //str is a string representation of binary number
+            var str = Array(String(number,radix:2))
+            let t =  amount-str.count
+            for index in t..<amount {
+                
+                if str[index-t] == "1" {
+                    subset.append( n [index])
+                }
+            }
+            result.append(subset)
+            
+          number -= 1
+        }
+        
+        
+        
+        return result
+    }
+    
 }
 
 extension Array {
