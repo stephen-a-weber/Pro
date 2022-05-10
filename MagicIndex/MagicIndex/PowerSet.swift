@@ -58,7 +58,22 @@ class PowerSet {
         
         return result
     }
-    
+    func BinaryPower<T>(_ n : [T])->[[T]]{
+        let amount = n.count
+        var number = 1<<(amount)
+        var result = [[T]]()
+        while number>0 {
+            var subset = [T]()
+            for i in 0..<amount {
+                if (number & (1<<(i))) != 0 {
+                    subset.append(n[i])
+                }
+            }
+            result.append(subset)
+            number -= 1
+        }
+        return result
+    }
 }
 
 extension Array {
